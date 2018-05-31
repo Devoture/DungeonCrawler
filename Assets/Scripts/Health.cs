@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour {
 
-	public float m_maxHealth = 100.0f;
-	public Slider m_healthBar;
-	public Text m_healthText;
+	public float maxHealth = 100.0f;
+	public Slider healthBar;
+	public Text healthText;
 
 	private float m_currentHealth;
 
 	void Start() {
-		m_currentHealth = m_maxHealth;
+		m_currentHealth = maxHealth;
 	}
 
 	public void TakeDamage(float amount) {
@@ -27,8 +27,8 @@ public class Health : MonoBehaviour {
 
 	public void Heal(float amount) {
 		m_currentHealth += amount;
-		if(m_currentHealth >= m_maxHealth) {
-			m_currentHealth = m_maxHealth;
+		if(m_currentHealth >= maxHealth) {
+			m_currentHealth = maxHealth;
 		}
 		UpdateHUD();
 	}
@@ -39,13 +39,13 @@ public class Health : MonoBehaviour {
 	}
 
 	float CalculateHealth() {
-		return m_currentHealth / m_maxHealth;
+		return m_currentHealth / maxHealth;
 	}
 
 	void UpdateHUD() {
-		if(m_healthBar != null && m_healthText != null) {
-			m_healthBar.value = CalculateHealth();
-			m_healthText.text = m_currentHealth + "/" + m_maxHealth;
+		if(healthBar != null && healthText != null) {
+			healthBar.value = CalculateHealth();
+			healthText.text = m_currentHealth + "/" + maxHealth;
 		}
 	}
 }

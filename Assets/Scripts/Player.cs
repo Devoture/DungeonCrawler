@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	public Rigidbody m_bulletPrefab;
-	public Transform m_bulletSpawn;
-	public float m_bulletSpeed = 20.0f;
+	public Rigidbody bulletPrefab;
+	public Transform bulletSpawn;
+	public float bulletSpeed = 20.0f;
 
 	void Update() {
 		if(Input.GetMouseButtonDown(0)) {
@@ -19,9 +19,9 @@ public class Player : MonoBehaviour {
 		shootDirection = Input.mousePosition;
 		shootDirection.z = 0.0f;
 		shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
-		shootDirection = shootDirection-transform.position;
-		Rigidbody bullet = Instantiate(m_bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0,0,0))) as Rigidbody;
-		bullet.velocity = new Vector2(shootDirection.x * m_bulletSpeed, shootDirection.y * m_bulletSpeed);
+		shootDirection = shootDirection - transform.position;
+		Rigidbody bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as Rigidbody;
+		bullet.velocity = new Vector2(shootDirection.x * bulletSpeed, shootDirection.y * bulletSpeed);
 		Destroy(bullet.gameObject, 2.0f);
 	}
 }

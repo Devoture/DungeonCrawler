@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-    public float m_speed = 5.0f;
+    public float speed = 5.0f;
 
-    private Rigidbody m_rb;
+    private Rigidbody rb;
 	
 	void Start() {
-		m_rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
 	}
 
 	void Update () {
@@ -24,6 +24,6 @@ public class Movement : MonoBehaviour {
      }
    
     void FixedUpdate () {
-        m_rb.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxis("Horizontal") * m_speed, 0.8f),Mathf.Lerp(0, Input.GetAxis("Vertical") * m_speed, 0.8f), 0);
+        rb.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxis("Horizontal") * speed, 0.8f),Mathf.Lerp(0, Input.GetAxis("Vertical") * speed, 0.8f), 0);
     }
 }
