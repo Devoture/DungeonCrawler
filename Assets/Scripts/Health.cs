@@ -22,6 +22,7 @@ public class Health : MonoBehaviour {
 			Dead();
 		}
 		UpdateHUD();
+		Debug.Log(m_currentHealth);
 	}
 
 	public void Heal(float amount) {
@@ -34,6 +35,7 @@ public class Health : MonoBehaviour {
 
 	void Dead() {
 		Debug.Log("you ded");
+		Destroy(this.gameObject);
 	}
 
 	float CalculateHealth() {
