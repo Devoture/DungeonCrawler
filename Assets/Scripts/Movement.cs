@@ -24,6 +24,6 @@ public class Movement : MonoBehaviour {
      }
    
     void FixedUpdate () {
-        rb.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxis("Horizontal") * speed, 0.8f),Mathf.Lerp(0, Input.GetAxis("Vertical") * speed, 0.8f), 0);
+        rb.velocity = new Vector3(Mathf.Lerp(0, Input.GetAxis("Horizontal") * speed, 0.8f), 0, Mathf.Lerp(0, Input.GetAxis("Vertical") * speed, 0.8f));
     }
 }
