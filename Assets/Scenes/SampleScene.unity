@@ -222,6 +222,12 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114588433053413706, guid: c28a6d9825b947046b407ccb85166a40,
+        type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
   m_IsPrefabParent: 0
@@ -328,9 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517bec84ac981d84cbe9e3f5455853fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 100
-  m_healthBar: {fileID: 0}
-  m_healthText: {fileID: 0}
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!65 &1153180948
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -398,3 +404,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1969167594 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1740249437594100, guid: c28a6d9825b947046b407ccb85166a40,
+    type: 2}
+  m_PrefabInternal: {fileID: 259421646}
+--- !u!114 &1969167595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1969167594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e592ca4d0fe994c4e9a5cfca0765e628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
+    type: 2}
+  bulletSpawn: {fileID: 0}
+  bulletSpeed: 20
