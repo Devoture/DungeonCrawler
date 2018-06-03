@@ -22,8 +22,9 @@ GameObject:
   - component: {fileID: 33820655599323648}
   - component: {fileID: 23419094508880178}
   - component: {fileID: 65793525977912856}
+  - component: {fileID: 114415743799808246}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +46,7 @@ GameObject:
   - component: {fileID: 54264337315327220}
   - component: {fileID: 114647121679882116}
   m_Layer: 0
-  m_Name: TestPlater
+  m_Name: TestPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560005466155744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.24}
   m_LocalScale: {x: 0.32648534, y: 0.08327171, z: 1}
   m_Children: []
   m_Father: {fileID: 4871225449788826}
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740249437594100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -3.94, y: 0.68, z: -5.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686663110843628}
@@ -93,7 +94,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6ecd681b6d9f56b4da86f47c0ed9cc52, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +129,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 99f702df6774a994b977689819dda77c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,7 +176,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 8
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65708443400063018
 BoxCollider:
@@ -185,7 +186,7 @@ BoxCollider:
   m_GameObject: {fileID: 1740249437594100}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -201,6 +202,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.99999994, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114415743799808246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560005466155744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e592ca4d0fe994c4e9a5cfca0765e628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
+    type: 2}
+  bulletSpawn: {fileID: 0}
+  bulletSpeed: 10
 --- !u!114 &114470875185373580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -212,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1cb09889f11ab84f86212e158aee6f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 5
+  speed: 10
 --- !u!114 &114588433053413706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,10 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be487a8a671e51438292e462807f48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bulletPrefab: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
-    type: 2}
-  m_bulletSpawn: {fileID: 4686663110843628}
-  m_bulletSpeed: 10
+  baseGun: {fileID: 114415743799808246}
 --- !u!114 &114647121679882116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,6 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517bec84ac981d84cbe9e3f5455853fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 100
-  m_healthBar: {fileID: 0}
-  m_healthText: {fileID: 0}
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  healthText: {fileID: 0}
