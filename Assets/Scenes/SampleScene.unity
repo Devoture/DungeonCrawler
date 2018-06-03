@@ -228,6 +228,11 @@ Prefab:
       value: 
       objectReference: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
         type: 2}
+    - target: {fileID: 114588433053413706, guid: c28a6d9825b947046b407ccb85166a40,
+        type: 2}
+      propertyPath: baseGun
+      value: 
+      objectReference: {fileID: 1969167595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
   m_IsPrefabParent: 0

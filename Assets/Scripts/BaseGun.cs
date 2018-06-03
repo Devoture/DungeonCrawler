@@ -7,7 +7,6 @@ public class BaseGun : MonoBehaviour {
 	public Transform bulletSpawn;
 	public float bulletSpeed = 20.0f;
 
-	private bool allowFire = true;
 	private float fireRate = 0.5f;
 	private float lastShot = 0.0f;
 
@@ -23,17 +22,16 @@ public class BaseGun : MonoBehaviour {
 	}
 
 	public void Fire() {
-		allowFire = false;
 		Vector3 shootDirection;
 		shootDirection = Input.mousePosition;
-		shootDirection.z = 0.0f;
-		shootDirection = Camera.main.ScreenToWorldPoint(shootDirection);
+		shootDirection.y = 0.0f;
+		shootDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 		shootDirection = shootDirection - transform.position;
 		 if (Time.time > fireRate + lastShot) {
 			Rigidbody bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as Rigidbody;
-			bullet.velocity = new Vector2(shootDirection.x * bulletSpeed, shootDirection.y * bulletSpeed);
+			bullet.velocity = new Vector3(shootDirection.x * bulletSpeed, 0, shootDirection.z * bulletSpeed);
 			lastShot = Time.time;
-			Destroy(bullet.gameObject, 2.0f);
+			Destroy(bullet.gameObject, 20.0f);
 		 }
 	}
 }
