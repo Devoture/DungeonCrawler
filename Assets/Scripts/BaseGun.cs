@@ -31,7 +31,8 @@ public class BaseGun : MonoBehaviour {
 			Rigidbody bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 0))) as Rigidbody;
 			bullet.velocity = new Vector3(shootDirection.x * bulletSpeed, 0, shootDirection.z * bulletSpeed);
 			lastShot = Time.time;
-			Destroy(bullet.gameObject, 20.0f);
+			bullet.name = "Bullet";
+			Destroy(bullet.gameObject, 2.0f);
 		 }
 	}
 }

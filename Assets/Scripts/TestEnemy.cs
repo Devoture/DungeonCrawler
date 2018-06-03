@@ -41,6 +41,7 @@ public class TestEnemy : MonoBehaviour {
 		canShoot = false;
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+		bullet.name = "EnemyBullet";
 		Destroy(bullet.gameObject, 2.0f);
 	}
 
