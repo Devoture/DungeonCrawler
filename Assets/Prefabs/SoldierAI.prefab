@@ -72,15 +72,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815402316037310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.39, y: 0.74, z: 0}
+  m_LocalRotation: {x: -0, y: 0.019899338, z: -0, w: 0.99980205}
+  m_LocalPosition: {x: 4.3858294, y: 0.74, z: 0.000083737075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617386892900726}
   - {fileID: 4377391458557032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.2800002, z: 0}
 --- !u!4 &4377391458557032
 Transform:
   m_ObjectHideFlags: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6148c389a111d444b64af8e0f94a264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  player: {fileID: 0}
   bulletSpawn: {fileID: 4377391458557032}
   bulletPrefab: {fileID: 1238207897240438, guid: 1ed3b21d9c65ed04f84bf3a4af38a374,
     type: 2}
@@ -263,9 +263,15 @@ MonoBehaviour:
   rateOfFire: 0.7
   timeBetweenShots: 0.15
   bulletSpeed: 5
-  numOfShots: 0
-  canShoot: 1
-  canBurst: 1
+  viewRadius: 10.48
+  viewAngle: 68
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  visibleTargets: []
 --- !u!195 &195821926479878732
 NavMeshAgent:
   m_ObjectHideFlags: 1
