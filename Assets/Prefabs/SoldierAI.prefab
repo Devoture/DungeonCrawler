@@ -259,8 +259,9 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4377391458557032}
   bulletPrefab: {fileID: 1238207897240438, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
     type: 2}
-  attackRange: 4
+  attackRange: 5
   rateOfFire: 1
+  bulletSpeed: 5
   canShoot: 1
 --- !u!195 &195821926479878732
 NavMeshAgent:

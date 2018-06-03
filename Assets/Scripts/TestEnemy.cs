@@ -10,6 +10,7 @@ public class TestEnemy : MonoBehaviour {
 	public GameObject bulletPrefab;
 	public float attackRange = 10.0f;
 	public float rateOfFire = .25f;
+	public float bulletSpeed = 5.0f;
 
 	private NavMeshAgent agent;
 	private float distance;
@@ -39,7 +40,7 @@ public class TestEnemy : MonoBehaviour {
 	void Attack() {
 		canShoot = false;
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-		bullet.GetComponent<Rigidbody>().velocity = transform.forward;
+		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
 		Destroy(bullet.gameObject, 2.0f);
 	}
 
