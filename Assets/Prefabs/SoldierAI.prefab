@@ -260,9 +260,12 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1238207897240438, guid: 1ed3b21d9c65ed04f84bf3a4af38a374,
     type: 2}
   attackRange: 5
-  rateOfFire: 1
+  rateOfFire: 0.7
+  timeBetweenShots: 0.15
   bulletSpeed: 5
+  numOfShots: 0
   canShoot: 1
+  canBurst: 1
 --- !u!195 &195821926479878732
 NavMeshAgent:
   m_ObjectHideFlags: 1

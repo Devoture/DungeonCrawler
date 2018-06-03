@@ -9,12 +9,15 @@ public class TestEnemy : MonoBehaviour {
 	public Transform bulletSpawn;
 	public GameObject bulletPrefab;
 	public float attackRange = 10.0f;
-	public float rateOfFire = .25f;
+	public float rateOfFire = .5f;
+	public float timeBetweenShots = .25f;
 	public float bulletSpeed = 5.0f;
 
 	private NavMeshAgent agent;
 	private float distance;
+	public int numOfShots = 0;
 	public bool canShoot = true;
+	public bool canBurst = true;
 
 	void Start() {
 		agent = this.transform.GetComponent<NavMeshAgent>();
@@ -28,8 +31,14 @@ public class TestEnemy : MonoBehaviour {
 				agent.SetDestination(target.position);
 			} else {
 				agent.isStopped = true;
-				if(canShoot) {
+				if(canBurst && canShoot) {
 					Attack();
+					canShoot = false;
+					StartCoroutine(BurstTimer(timeBetweenShots));
+				}
+				if(numOfShots == 3) {
+					canBurst = false;
+					numOfShots = 0;
 					StartCoroutine(RateOfFire(rateOfFire));
 				}
 			}
@@ -38,14 +47,19 @@ public class TestEnemy : MonoBehaviour {
 	}
 
 	void Attack() {
-		canShoot = false;
+		numOfShots++;
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
 		Destroy(bullet.gameObject, 2.0f);
 	}
 
-	private IEnumerator RateOfFire(float waitTime) {
+	private IEnumerator BurstTimer(float waitTime) {
 		yield return new WaitForSeconds(waitTime);
 		canShoot = true;
+    }
+
+	private IEnumerator RateOfFire(float waitTime) {
+		yield return new WaitForSeconds(waitTime);
+		canBurst = true;
     }
 }
