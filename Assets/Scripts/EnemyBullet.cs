@@ -9,7 +9,7 @@ public class EnemyBullet : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if(other.tag == "Player") {
 			other.GetComponent<Health>().TakeDamage(damage);
-			Destroy(this.gameObject);
 		}
+		Destroy(this.gameObject);
 	}
 }

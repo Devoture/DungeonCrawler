@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor (typeof (TestEnemy))]
+[CustomEditor (typeof (FieldOfView))]
 public class FieldOfViewEditor : Editor {
 
 	void OnSceneGUI() {
-		TestEnemy test = (TestEnemy)target;
+		FieldOfView fov = (FieldOfView)target;
 		Handles.color = Color.white;
-		Handles.DrawWireArc(test.transform.position, Vector3.up, Vector3.forward, 360, test.viewRadius);
-		Vector3 viewAngleA = test.DirFromAngle(-test.viewAngle / 2, false);
-		Vector3 viewAngleB = test.DirFromAngle(test.viewAngle / 2, false);
+		Handles.DrawWireArc(fov.transform.position, Vector3.up, Vector3.forward, 360, fov.attackRange);
+		Vector3 viewAngleA = fov.DirFromAngle(-fov.viewAngle / 2, false);
+		Vector3 viewAngleB = fov.DirFromAngle(fov.viewAngle / 2, false);
 
-		Handles.DrawLine(test.transform.position, test.transform.position + viewAngleA * test.viewRadius);
-		Handles.DrawLine(test.transform.position, test.transform.position + viewAngleB * test.viewRadius);
+		Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleA * fov.attackRange);
+		Handles.DrawLine(fov.transform.position, fov.transform.position + viewAngleB * fov.attackRange);
 
 		Handles.color = Color.red;
-		if(test.canSeePlayer) {
-			Handles.DrawLine(test.transform.position, test.player.position);
+		if(fov.canSeePlayer) {
+			Handles.DrawLine(fov.transform.position, fov.player.position);
 		}
 	}
 }
