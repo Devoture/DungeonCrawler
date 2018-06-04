@@ -35,7 +35,7 @@ public class SoldierAI : MonoBehaviour {
 				agent.isStopped = false;
 				agent.SetDestination(player.transform.position);
 			} 
-			if((distance < fov.attackRange && fov.canSeePlayer) || startedBurst) {
+			if(distance < fov.attackRange && fov.canSeePlayer || startedBurst) {
 				agent.isStopped = true;
 				if(canBurst && canShoot) {
 					startedBurst = true;
