@@ -167,8 +167,8 @@ GameObject:
   - component: {fileID: 230350186}
   - component: {fileID: 230350185}
   - component: {fileID: 230350189}
-  m_Layer: 0
-  m_Name: Obsticle
+  m_Layer: 8
+  m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -351,7 +351,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.39
+      value: 4.3858294
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalPosition.y
@@ -359,23 +359,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.000083737075
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.019899338
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99980205
       objectReference: {fileID: 0}
     - target: {fileID: 4055616697799590, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
       propertyPath: m_RootOrder
@@ -383,9 +383,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114228210106082662, guid: 93af848f180cc4e4fa060872e3cfb1fe,
         type: 2}
-      propertyPath: target
+      propertyPath: player
       value: 
       objectReference: {fileID: 1003728553}
+    - target: {fileID: 114228210106082662, guid: 93af848f180cc4e4fa060872e3cfb1fe,
+        type: 2}
+      propertyPath: viewAngle
+      value: 41
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93af848f180cc4e4fa060872e3cfb1fe, type: 2}
   m_IsPrefabParent: 0
