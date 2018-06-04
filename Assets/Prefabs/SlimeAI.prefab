@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d49c02f534ada4bb89507f72d92128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 4871225449788826, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
   bulletSpawnRight: {fileID: 4582273814326556}
   bulletSpawnMiddle: {fileID: 4888859076561034}
   bulletSpawnLeft: {fileID: 4271555793154838}
@@ -467,7 +467,7 @@ MonoBehaviour:
   smallSlimeSpawnLeft: {fileID: 4300705890934586}
   bulletPrefab: {fileID: 1238207897240438, guid: 1ed3b21d9c65ed04f84bf3a4af38a374,
     type: 2}
-  smallSlimePrefab: {fileID: 1815402316037310, guid: 93af848f180cc4e4fa060872e3cfb1fe,
+  smallSlimePrefab: {fileID: 1528972532442372, guid: 49f2c700e2c2f7243be8b67310c7a485,
     type: 2}
   rateOfFire: 0.5
   bulletSpeed: 5
@@ -492,4 +492,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   canSeePlayer: 0
-  player: {fileID: 0}
+  player: {fileID: 1740249437594100, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
