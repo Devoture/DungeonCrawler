@@ -10,7 +10,11 @@ public class FieldOfView : MonoBehaviour {
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 	public bool canSeePlayer;
-	public Transform player;
+	public GameObject player;
+
+	void Start() {
+		player = GameObject.FindGameObjectWithTag("Player");
+	}
 
 	public void FindVisibleTargets() {
 		Collider[] TargetsInViewRadius = Physics.OverlapSphere(transform.position, attackRange, targetMask);
@@ -18,7 +22,6 @@ public class FieldOfView : MonoBehaviour {
 			Transform target = TargetsInViewRadius[i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 			if(Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2) {
-				Debug.Log("Inside angle");
 				float dstToTarget = Vector3.Distance(transform.position, target.position);
 				if(!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask)) {
 					canSeePlayer = true;

@@ -260,7 +260,6 @@ MonoBehaviour:
   bulletSpawn: {fileID: 4377391458557032}
   bulletPrefab: {fileID: 1238207897240438, guid: 1ed3b21d9c65ed04f84bf3a4af38a374,
     type: 2}
-  attackRange: 10
   rateOfFire: 0.5
   timeBetweenShots: 0.25
   bulletSpeed: 5
@@ -276,8 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45cb00c2e4070bf47b753ce53904b674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 5.6
-  viewAngle: 29
+  attackRange: 10
+  viewAngle: 32
   targetMask:
     serializedVersion: 2
     m_Bits: 512

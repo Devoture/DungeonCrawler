@@ -18,7 +18,7 @@ public class FieldOfViewEditor : Editor {
 
 		Handles.color = Color.red;
 		if(fov.canSeePlayer) {
-			Handles.DrawLine(fov.transform.position, fov.player.position);
+			Handles.DrawLine(fov.transform.position, fov.player.transform.position);
 		}
 	}
 }

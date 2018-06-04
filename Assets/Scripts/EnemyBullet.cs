@@ -10,6 +10,8 @@ public class EnemyBullet : MonoBehaviour {
 		if(other.tag == "Player") {
 			other.GetComponent<Health>().TakeDamage(damage);
 		}
-		Destroy(this.gameObject);
+		if(other.tag != "Enemy") {
+			Destroy(this.gameObject);
+		}
 	}
 }

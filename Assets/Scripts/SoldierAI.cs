@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class SoldierAI : MonoBehaviour {
 
-	public Transform player;
+	public GameObject player;
 	public Transform bulletSpawn;
 	public GameObject bulletPrefab;
 	public float rateOfFire = .5f;
@@ -24,15 +24,16 @@ public class SoldierAI : MonoBehaviour {
 	void Start() {
 		agent = this.transform.GetComponent<NavMeshAgent>();
 		fov = GetComponent<FieldOfView>();
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	void Update() {
-		if(player != null && roomEntered.playerIsInRoom) {
+		if(player != null ) { // && roomEntered.playerIsInRoom
 			fov.FindVisibleTargets();
-			distance = Vector3.Distance(transform.position, player.position);
+			distance = Vector3.Distance(transform.position, player.transform.position);
 			if(distance > fov.attackRange || !fov.canSeePlayer) {
 				agent.isStopped = false;
-				agent.SetDestination(player.position);
+				agent.SetDestination(player.transform.position);
 			} 
 			if((distance < fov.attackRange && fov.canSeePlayer) || startedBurst) {
 				agent.isStopped = true;
@@ -49,7 +50,7 @@ public class SoldierAI : MonoBehaviour {
 					StartCoroutine(RateOfFire(rateOfFire));
 				}
 			}
-			transform.LookAt(player);
+			transform.LookAt(player.transform);
 		}
 	}
 
