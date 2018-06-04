@@ -19,6 +19,7 @@ public class TestEnemy : MonoBehaviour {
 	public LayerMask obstacleMask;
 	public List<Transform> visibleTargets = new List<Transform>();
 	public bool canSeePlayer;
+	public RoomEntered roomEntered;
 
 	private NavMeshAgent agent;
 	private float distance;
@@ -32,7 +33,7 @@ public class TestEnemy : MonoBehaviour {
 	}
 
 	void Update() {
-		if(player != null) {
+		if(player != null && roomEntered.playerIsInRoom) {
 			FindVisibleTargets();
 			distance = Vector3.Distance(transform.position, player.position);
 			if(distance > attackRange || !canSeePlayer) {

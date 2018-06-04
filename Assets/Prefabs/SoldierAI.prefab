@@ -264,7 +264,7 @@ MonoBehaviour:
   timeBetweenShots: 0.15
   bulletSpeed: 5
   viewRadius: 10.48
-  viewAngle: 68
+  viewAngle: 41
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -272,6 +272,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   visibleTargets: []
+  canSeePlayer: 0
+  roomEntered: {fileID: 0}
 --- !u!195 &195821926479878732
 NavMeshAgent:
   m_ObjectHideFlags: 1
