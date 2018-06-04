@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class BigSlimeAI : MonoBehaviour {
 
-	public Transform player;
+	public GameObject player;
 	public Transform bulletSpawnRight;
 	public Transform bulletSpawnMiddle;
 	public Transform bulletSpawnLeft;
@@ -26,12 +26,13 @@ public class BigSlimeAI : MonoBehaviour {
 	void Start() {
 		agent = this.transform.GetComponent<NavMeshAgent>();
 		fov = GetComponent<FieldOfView>();
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	void Update() {
 		if(player != null) { // && roomEntered.playerIsInRoom
 			fov.FindVisibleTargets();
-			distance = Vector3.Distance(transform.position, player.position);
+			distance = Vector3.Distance(transform.position, player.transform.position);
 			if(distance < fov.attackRange && fov.canSeePlayer) {
 				if(canShoot) {
 					canShoot = false;
@@ -39,7 +40,7 @@ public class BigSlimeAI : MonoBehaviour {
 					StartCoroutine(RateOfFire(rateOfFire));
 				}
 			}
-			transform.LookAt(player);
+			transform.LookAt(player.transform);
 		}
 	}
 
