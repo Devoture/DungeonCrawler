@@ -22,6 +22,7 @@ public class BigSlimeAI : MonoBehaviour {
 	private FieldOfView fov;
 	private float distance;
 	private bool canShoot = true;
+	private bool isQuitting;
 
 	void Start() {
 		agent = this.transform.GetComponent<NavMeshAgent>();
@@ -64,9 +65,15 @@ public class BigSlimeAI : MonoBehaviour {
 		canShoot = true;
     }
 
+	void OnApplicationQuit() {
+		isQuitting = true;
+	}
+
 	void OnDestroy() {
-		Instantiate(smallSlimePrefab, smallSlimeSpawnRight.position, Quaternion.identity);
-		Instantiate(smallSlimePrefab, smallSlimeSpawnMiddle.position, Quaternion.identity);
-		Instantiate(smallSlimePrefab, smallSlimeSpawnLeft.position, Quaternion.identity);
+		if(!isQuitting) {
+			Instantiate(smallSlimePrefab, smallSlimeSpawnRight.position, Quaternion.identity);
+			Instantiate(smallSlimePrefab, smallSlimeSpawnMiddle.position, Quaternion.identity);
+			Instantiate(smallSlimePrefab, smallSlimeSpawnLeft.position, Quaternion.identity);
+		}
 	}
 }
