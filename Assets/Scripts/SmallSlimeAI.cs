@@ -46,6 +46,7 @@ public class SmallSlimeAI : MonoBehaviour {
 	void Attack() {
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+		bullet.name = "EnemyBullet";
 		Destroy(bullet.gameObject, 2.0f);
 	}
 
