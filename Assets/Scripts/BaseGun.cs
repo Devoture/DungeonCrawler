@@ -21,7 +21,7 @@ public class BaseGun : MonoBehaviour {
 		
 	}
 
-	public void Fire() {
+	public virtual void Fire() {
 		Vector3 shootDirection;
 		shootDirection = Input.mousePosition;
 		shootDirection.y = 0.0f;

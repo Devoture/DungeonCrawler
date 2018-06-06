@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1740249437594100}
   m_IsPrefabParent: 1
+--- !u!1 &1308724493732586
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4757682237335600}
+  m_Layer: 0
+  m_Name: BarrelExit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1560005466155744
 GameObject:
   m_ObjectHideFlags: 0
@@ -23,8 +38,9 @@ GameObject:
   - component: {fileID: 23419094508880178}
   - component: {fileID: 65793525977912856}
   - component: {fileID: 114415743799808246}
+  - component: {fileID: 114505151338909110}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +63,7 @@ GameObject:
   - component: {fileID: 114647121679882116}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,8 +77,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.24}
   m_LocalScale: {x: 0.32648534, y: 0.08327171, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4757682237335600}
   m_Father: {fileID: 4871225449788826}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4757682237335600
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1308724493732586}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.56, z: 0.507}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4686663110843628}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4871225449788826
@@ -72,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1740249437594100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: 0.68, z: -5.45}
+  m_LocalPosition: {x: -0.2454692, y: 0.49999905, z: -8.599213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4686663110843628}
@@ -215,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 54159799732376014, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
     type: 2}
-  bulletSpawn: {fileID: 0}
+  bulletSpawn: {fileID: 4757682237335600}
   bulletSpeed: 10
 --- !u!114 &114470875185373580
 MonoBehaviour:
@@ -229,6 +259,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &114505151338909110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560005466155744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb268fe3cd964d448f8799b6782fdb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletCount: 0
+  spreadAngle: 0
+  bulletFireVelocity: 1
+  bullet: {fileID: 1238207897240438, guid: 2e469e6a9bc80a842bc622cc7bc3457f, type: 2}
+  BarrelExit: {fileID: 4757682237335600}
 --- !u!114 &114588433053413706
 MonoBehaviour:
   m_ObjectHideFlags: 1
