@@ -57,11 +57,12 @@ GameObject:
   - component: {fileID: 65686072503191268}
   - component: {fileID: 114202094401984098}
   - component: {fileID: 195821926479878732}
-  - component: {fileID: 114228210106082662}
   - component: {fileID: 54332940451946626}
+  - component: {fileID: 114609845770712464}
+  - component: {fileID: 114448118510008500}
   m_Layer: 0
   m_Name: SoldierAI
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,15 +73,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815402316037310}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.39, y: 0.74, z: 0}
+  m_LocalRotation: {x: -0, y: 0.019899338, z: -0, w: 0.99980205}
+  m_LocalPosition: {x: 4.3858294, y: 0.74, z: 0.000083737075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617386892900726}
   - {fileID: 4377391458557032}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.2800002, z: 0}
 --- !u!4 &4377391458557032
 Transform:
   m_ObjectHideFlags: 1
@@ -236,7 +237,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1815402316037310}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 517bec84ac981d84cbe9e3f5455853fa, type: 3}
   m_Name: 
@@ -244,7 +245,7 @@ MonoBehaviour:
   maxHealth: 100
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
---- !u!114 &114228210106082662
+--- !u!114 &114448118510008500
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -255,14 +256,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6148c389a111d444b64af8e0f94a264, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  player: {fileID: 1740249437594100, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
   bulletSpawn: {fileID: 4377391458557032}
-  bulletPrefab: {fileID: 1238207897240438, guid: 2e469e6a9bc80a842bc622cc7bc3457f,
+  bulletPrefab: {fileID: 1238207897240438, guid: 1ed3b21d9c65ed04f84bf3a4af38a374,
     type: 2}
-  attackRange: 5
   rateOfFire: 1
+  timeBetweenShots: 0.25
   bulletSpeed: 5
-  canShoot: 1
+  roomEntered: {fileID: 0}
+--- !u!114 &114609845770712464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1815402316037310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45cb00c2e4070bf47b753ce53904b674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 10
+  viewAngle: 32
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 256
+  canSeePlayer: 0
+  player: {fileID: 1740249437594100, guid: c28a6d9825b947046b407ccb85166a40, type: 2}
 --- !u!195 &195821926479878732
 NavMeshAgent:
   m_ObjectHideFlags: 1

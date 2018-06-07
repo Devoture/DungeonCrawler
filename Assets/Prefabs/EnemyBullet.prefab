@@ -23,10 +23,10 @@ GameObject:
   - component: {fileID: 23730034760375932}
   - component: {fileID: 135561474110899752}
   - component: {fileID: 54159799732376014}
-  - component: {fileID: 114132210920293882}
+  - component: {fileID: 114326028990483618}
   m_Layer: 0
-  m_Name: Bullet
-  m_TagString: Untagged
+  m_Name: EnemyBullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238207897240438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7370456, y: 0.09999947, z: -4.4439616}
+  m_LocalPosition: {x: 1.7370456, y: 0.09999947, z: -4.578}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: afb09bb3318aaee448c7f3c930eb3815, type: 2}
+  - {fileID: 2100000, guid: 99f702df6774a994b977689819dda77c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -99,9 +99,9 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114132210920293882
+--- !u!114 &114326028990483618
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1238207897240438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e5e051c6687f354bae8a7211043a54d, type: 3}
+  m_Script: {fileID: 11500000, guid: a97bf83875ab087448bd0717ee85e831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20

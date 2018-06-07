@@ -7,9 +7,16 @@ public class Bullet : MonoBehaviour {
 	public float damage = 20.0f;
 
 	void OnTriggerEnter(Collider other) {
-		if(other.tag == "Enemy") {
-			other.GetComponent<Health>().TakeDamage(damage);
-			Destroy(this.gameObject);
+		if(this.name == "Bullet") {
+			if(other.tag == "Enemy") {
+				other.GetComponent<Health>().TakeDamage(damage);
+				Destroy(this.gameObject);
+			}
+		} else if(this.name == "EnemyBullet") {
+			if(other.tag == "Player") {
+				other.GetComponent<Health>().TakeDamage(damage);
+				Destroy(this.gameObject);
+			}
 		}
 	}
 }

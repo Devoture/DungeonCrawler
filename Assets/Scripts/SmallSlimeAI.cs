@@ -3,44 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TestEnemy : MonoBehaviour {
+public class SmallSlimeAI : MonoBehaviour {
 
-	public Transform target;
+	public GameObject player;
 	public Transform bulletSpawn;
 	public GameObject bulletPrefab;
-	public float attackRange = 10.0f;
-	public float rateOfFire = .25f;
+	public float rateOfFire = .5f;
 	public float bulletSpeed = 5.0f;
+	public RoomEntered roomEntered;
 
 	private NavMeshAgent agent;
+	private FieldOfView fov;
 	private float distance;
-	public bool canShoot = true;
+	private bool canShoot = true;
 
 	void Start() {
 		agent = this.transform.GetComponent<NavMeshAgent>();
+		fov = GetComponent<FieldOfView>();
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	void Update() {
-		if(target != null) {
-			distance = Vector3.Distance(transform.position, target.position);
-			if(distance > attackRange) {
+		if(player != null ) { // && roomEntered.playerIsInRoom
+			fov.FindVisibleTargets();
+			distance = Vector3.Distance(transform.position, player.transform.position);
+			if(distance > fov.attackRange || !fov.canSeePlayer) {
 				agent.isStopped = false;
-				agent.SetDestination(target.position);
-			} else {
+				agent.SetDestination(player.transform.position);
+			} 
+			if(distance < fov.attackRange && fov.canSeePlayer) {
 				agent.isStopped = true;
 				if(canShoot) {
 					Attack();
+					canShoot = false;
 					StartCoroutine(RateOfFire(rateOfFire));
 				}
 			}
-			transform.LookAt(target);
+			transform.LookAt(player.transform);
 		}
 	}
 
 	void Attack() {
-		canShoot = false;
 		GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 		bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
+		bullet.name = "EnemyBullet";
 		Destroy(bullet.gameObject, 2.0f);
 	}
 
