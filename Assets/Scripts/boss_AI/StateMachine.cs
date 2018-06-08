@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine_1 : MonoBehaviour {
+public class StateMachine : MonoBehaviour {
 
-	private IState_1 _currentlyRunningState;
-	private IState_1 _previousState;
+	private IState _currentlyRunningState;
+	private IState _previousState;
 
-	public void ChangeState(IState_1 newState) {
+	public void ChangeState(IState newState) {
 
 		if(this._currentlyRunningState != null) {
 			this._currentlyRunningState.Exit();
@@ -15,7 +15,7 @@ public class StateMachine_1 : MonoBehaviour {
 
 		this._previousState = this._currentlyRunningState;
 		this._currentlyRunningState = newState;
-		this._currentlyRunningState = Enter();
+		this._currentlyRunningState.Enter();
 
 
 	}

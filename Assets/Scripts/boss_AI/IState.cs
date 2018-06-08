@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public Interface IState_1 {
+public interface IState {
 
 void Enter();
 void Execute();
-Void Exit();
+void Exit();
 
 }
